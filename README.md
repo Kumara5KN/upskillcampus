@@ -2,15 +2,15 @@
 
 Project Overview
 
-This project implements a Machine Learning solution to accurately forecast hourly traffic volume across four major city junctions. The goal is to provide municipal planning and traffic control teams with proactive intelligence to mitigate congestion and optimize signal timing, directly supporting the Smart City initiative.
+This project uses Machine Learning (XGBoost) to forecast hourly traffic volume across four city junctions. The goal is to help city teams proactively manage congestion and optimize traffic lights.
 
 🎯 Goal
 
-The core objective is to predict the hourly vehicle count for the next four months on four specific road junctions, successfully modeling complex time-series patterns, including:
+The main objective is to predict hourly vehicle count for the next four months, specifically accounting for:
 
-Daily and weekly seasonality (rush hour peaks).
+Daily and weekly traffic patterns.
 
-The significant impact of Public Holidays, which drastically alter normal traffic flow.
+The major traffic drop caused by Public Holidays.
 
 💻 Technology Stack
 
@@ -20,11 +20,11 @@ Purpose
 
 Model
 
-XGBoost Regressor (for high-accuracy time-series regression)
+XGBoost Regressor (High-accuracy forecasting)
 
 Framework
 
-Streamlit (app.py) for a functional, interactive web application
+Streamlit (app.py) for the web application
 
 Language
 
@@ -38,7 +38,7 @@ pandas, numpy, joblib, plotly, xgboost
 
 1. Prerequisites
 
-Ensure you have Python 3.9+ installed.
+Python 3.9+ is required.
 
 2. Clone the Repository
 
@@ -48,20 +48,20 @@ cd smart-city-traffic-forecaster
 
 3. Install Dependencies
 
-Install all required libraries using the provided requirements.txt file:
+Install all required libraries using requirements.txt:
 
 pip install -r requirements.txt
 
 
 4. Required Files
 
-Ensure the following files are present in the root directory:
+The following essential files must be in the root directory:
 
-app.py (The main Streamlit application)
+app.py (The application)
 
-xgb_traffic_model.joblib (The trained XGBoost model)
+xgb_traffic_model.joblib (The trained model)
 
-model_features.joblib (The list of 18 features required by the model)
+model_features.joblib (The 18 required feature list)
 
 requirements.txt
 
@@ -69,17 +69,15 @@ train_aWnotuB.csv / datasets_8494_11879_test_BdBKkAj.csv (Source data)
 
 ▶️ How to Run the Application
 
-Once the dependencies are installed, run the Streamlit application from your terminal:
+Run the app from your terminal:
 
 streamlit run app.py
 
 
-The application will automatically open in your web browser, allowing you to select a future date, time, and junction to generate a traffic forecast.
+The application will open in your browser for you to generate forecasts.
 
 📊 Model Performance & Features
 
-The model was trained on historical data from 2015-2017.
+Key Metric: Root Mean Square Error ($\text{RMSE}$) $\approx 8.5$ vehicles. This demonstrates high precision on unseen data.
 
-Key Metric: Root Mean Square Error ($\text{RMSE}$) $\approx 8.5$ vehicles on the unseen test set, demonstrating high precision.
-
-Most Important Features: The model validated the feature engineering by ranking Junction ID and Hour of Day as the strongest predictors, confirming its ability to capture both spatial and temporal variance.
+Most Important Features: Junction ID and Hour of Day were ranked highest, confirming the model effectively captures spatial and time-of-day patterns.
