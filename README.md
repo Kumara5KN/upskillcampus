@@ -22,14 +22,4 @@ The main objective is to predict **hourly vehicle counts** for the next four mon
 | **Language** | Python 3.9+ |
 | **Dependencies** | pandas, numpy, joblib, plotly, xgboost |
 
----
 
-## ⚙️ Setup and Installation
-
-### 1️⃣ Prerequisites
-- Ensure **Python 3.9+** is installed.
-
-### 2️⃣ Clone the Repository
-```bash
-git clone [PASTE_YOUR_REPO_URL_HERE]
-cd smart-city-traffic-forecaster
