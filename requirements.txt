@@ -1,0 +1,11 @@
+pandas
+
+numpy
+
+joblib
+
+plotly
+
+xgboost
+
+streamlit (Implicitly, as it runs app.py)
